@@ -14,7 +14,7 @@ class QueryBuilder
      */
     public function buildSelectQuery($tableName, array $condition = array(), array $sort = array(), $limit = null, $offset = null)
     {
-        $query = 'SELECT * FROM `' . $tableName . '` ';
+        $query = 'SELECT * FROM ' . $tableName . ' ';
         $query .= $this->buildCondition($condition);
         $query .= $this->buildSort($sort);
         $query .= $this->buildLimitOffset($limit, $offset);
@@ -28,7 +28,7 @@ class QueryBuilder
      */
     public function buildCountQuery($tableName, array $condition = array())
     {
-        $query = 'SELECT count(*) FROM `' . $tableName . '` ';
+        $query = 'SELECT count(*) FROM ' . $tableName . ' ';
         $query .= $this->buildCondition($condition);
         return $query;
     }
@@ -40,7 +40,7 @@ class QueryBuilder
      */
     public function buildInsertQuery($tableName, array $data)
     {
-        $query = 'INSERT INTO `' . $tableName . '` ';
+        $query = 'INSERT INTO ' . $tableName . ' ';
         $query .= '(' . implode(',', array_map(function ($val) {
                 return "`$val`";
             }, array_keys($data))) . ')';
@@ -59,7 +59,7 @@ class QueryBuilder
      */
     public function buildUpdateQuery($tableName, array $data, array $condition)
     {
-        $query = 'UPDATE `' . $tableName . '` SET ';
+        $query = 'UPDATE ' . $tableName . ' SET ';
         $query .= $this->buildFields($data);
         $query .= $this->buildCondition($condition);
         return $query;
@@ -72,7 +72,7 @@ class QueryBuilder
      */
     public function buildDeleteQuery($tableName, $primaryKeyName)
     {
-        return 'DELETE FROM `' . $tableName . '` WHERE `' . $primaryKeyName . '` = :' . $primaryKeyName;
+        return 'DELETE FROM ' . $tableName . ' WHERE `' . $primaryKeyName . '` = :' . $primaryKeyName;
     }
 
     /**
