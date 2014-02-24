@@ -8,7 +8,6 @@
 
 namespace Models;
 
-use Models\Mapper\MapperException;
 use Models\Mapper\MapperInterface;
 use Models\Mapper\MapperManager;
 use Models\Metadata\MetadataStorage;
