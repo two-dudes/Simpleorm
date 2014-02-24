@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="/home/vin/Projects/Simpleorm/Tests" tests="11" assertions="19" failures="0" errors="0" time="0.182536">
-    <testsuite name="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" namespace="Tests" fullPackage="Tests" package="Tests" tests="9" assertions="10" failures="0" errors="0" time="0.011309">
-      <testcase name="testGetFirst" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="49" assertions="1" time="0.004915"/>
-      <testcase name="testGetLast" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="57" assertions="1" time="0.000606"/>
-      <testcase name="testCount" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="65" assertions="1" time="0.000645"/>
-      <testcase name="testGetFieldSum" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="73" assertions="1" time="0.000616"/>
-      <testcase name="testToArray" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="81" assertions="2" time="0.000866"/>
-      <testcase name="testExtractField" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="90" assertions="1" time="0.001287"/>
-      <testcase name="testGetPairs" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="98" assertions="1" time="0.000806"/>
-      <testcase name="testGetGrouppedByKeys" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="106" assertions="1" time="0.000962"/>
-      <testcase name="testCollectItemsByCond" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="115" assertions="1" time="0.000606"/>
+  <testsuite name="/home/vin/Projects/Simpleorm/Tests" tests="11" assertions="19" failures="0" errors="0" time="0.138773">
+    <testsuite name="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" namespace="Tests" fullPackage="Tests" package="Tests" tests="9" assertions="10" failures="0" errors="0" time="0.010957">
+      <testcase name="testGetFirst" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="49" assertions="1" time="0.004598"/>
+      <testcase name="testGetLast" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="57" assertions="1" time="0.000547"/>
+      <testcase name="testCount" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="65" assertions="1" time="0.000672"/>
+      <testcase name="testGetFieldSum" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="73" assertions="1" time="0.000783"/>
+      <testcase name="testToArray" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="81" assertions="2" time="0.000977"/>
+      <testcase name="testExtractField" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="90" assertions="1" time="0.001123"/>
+      <testcase name="testGetPairs" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="98" assertions="1" time="0.000785"/>
+      <testcase name="testGetGrouppedByKeys" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="106" assertions="1" time="0.000848"/>
+      <testcase name="testCollectItemsByCond" class="Tests\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/CollectionTest.php" line="115" assertions="1" time="0.000624"/>
     </testsuite>
-    <testsuite name="Tests\Mappers\BasicTest" file="/home/vin/Projects/Simpleorm/Tests/Mappers/BasicTest.php" namespace="Tests\Mappers" fullPackage="Tests.Mappers" tests="1" assertions="2" failures="0" errors="0" time="0.003873">
-      <testcase name="testAnnotationMapperOk" class="Tests\Mappers\BasicTest" file="/home/vin/Projects/Simpleorm/Tests/Mappers/BasicTest.php" line="37" assertions="2" time="0.003873"/>
+    <testsuite name="Tests\Mappers\BasicTest" file="/home/vin/Projects/Simpleorm/Tests/Mappers/BasicTest.php" namespace="Tests\Mappers" fullPackage="Tests.Mappers" tests="1" assertions="2" failures="0" errors="0" time="0.003030">
+      <testcase name="testAnnotationMapperOk" class="Tests\Mappers\BasicTest" file="/home/vin/Projects/Simpleorm/Tests/Mappers/BasicTest.php" line="37" assertions="2" time="0.003030"/>
     </testsuite>
-    <testsuite name="Tests\Mappers\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/Mappers/PdoMapperTest.php" namespace="Tests\Mappers" fullPackage="Tests.Mappers" tests="1" assertions="7" failures="0" errors="0" time="0.167353">
-      <testcase name="testAll" class="Tests\Mappers\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/Mappers/PdoMapperTest.php" line="23" assertions="7" time="0.167353"/>
+    <testsuite name="Tests\Mappers\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/Mappers/PdoMapperTest.php" namespace="Tests\Mappers" fullPackage="Tests.Mappers" tests="1" assertions="7" failures="0" errors="0" time="0.124786">
+      <testcase name="testAll" class="Tests\Mappers\PdoMapperTest" file="/home/vin/Projects/Simpleorm/Tests/Mappers/PdoMapperTest.php" line="23" assertions="7" time="0.124786"/>
     </testsuite>
   </testsuite>
 </testsuites>
