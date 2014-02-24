@@ -6,7 +6,6 @@
  * Time: 6:56 PM
  */
 
-use Example\User;
 use Models\Mapper\Pdo\PdoMapper;
 
 error_reporting(E_ALL);

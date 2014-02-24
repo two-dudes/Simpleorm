@@ -35,6 +35,10 @@ class PdoMapperTest extends PHPUnit_Framework_TestCase
         $user = User::getMapper()->fetch($userId);
         $this->assertEquals($user->id, $userId);
 
+        // fetch
+        $user = User::getMapper()->fetchOne(array('id' => $userId));
+        $this->assertEquals($user->id, $userId);
+
         // save
         $user->name = 'test1';
         $user->save();

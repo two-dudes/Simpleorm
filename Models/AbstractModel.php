@@ -8,7 +8,9 @@
 
 namespace Models;
 
+use Models\Mapper\MapperException;
 use Models\Mapper\MapperInterface;
+use Models\Mapper\MapperManager;
 use Models\Metadata\MetadataStorage;
 
 /**
@@ -33,34 +35,24 @@ class AbstractModel implements ModelInterface
     protected $metadataStorage;
 
     /**
-     * @var MapperInterface
-     */
-    protected static $mapper;
-
-    /**
-     * @var string
-     */
-    protected static $mapperClass;
-
-    /**
      *
      */
     function __construct(array $data = array())
     {
         $this->metadataStorage = MetadataStorage::getInstance();
+
         $this->data = $this->metadataStorage->getInitialFields(get_class($this));
-        $this->populate($data);;
+
+        $this->populate($data);
     }
 
     /**
+     * @throws Mapper\MapperException
      * @return MapperInterface
      */
     public static function getMapper()
     {
-        if (null === self::$mapper) {
-            self::$mapper = new static::$mapperClass;
-        }
-        return self::$mapper;
+        return MapperManager::getInstance()->getMapper(get_called_class());
     }
 
     /**
@@ -86,6 +78,7 @@ class AbstractModel implements ModelInterface
     /**
      * @param $name
      * @param $value
+     * @throws \Exception
      * @return mixed
      */
     public function __set($name, $value)

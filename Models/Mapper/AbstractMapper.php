@@ -17,6 +17,11 @@ use Models\ModelInterface;
 abstract class AbstractMapper implements MapperInterface
 {
     /**
+     * @var array
+     */
+    protected $config = array();
+
+    /**
      * Model class implementing ModelInterface
      * @var string
      */
@@ -65,6 +70,22 @@ abstract class AbstractMapper implements MapperInterface
      * @return mixed
      */
     abstract protected function doDelete(ModelInterface $model);
+
+    /**
+     * @param array $config
+     */
+    public function setConfig(array $config)
+    {
+        $this->config = $config;
+    }
+
+    /**
+     * @return array
+     */
+    public function getConfig()
+    {
+        return $this->config;
+    }
 
     /**
      * @param array $connectionConfig
@@ -233,7 +254,7 @@ abstract class AbstractMapper implements MapperInterface
         if (null === $data || false === $data) {
             return null;
         } else {
-            $modelClass = $modelClass ?: $this->getModelClass();
+            $modelClass = $modelClass ? : $this->getModelClass();
             $data = $this->translateFromStorage($data);
             $model = new $modelClass();
             $model->setCleanData($data);
@@ -248,7 +269,7 @@ abstract class AbstractMapper implements MapperInterface
      */
     public function createModelCollection($data)
     {
-    	$objectsData = array();
+        $objectsData = array();
 
         if (count($data)) {
             foreach ($data as $model) {
@@ -271,10 +292,10 @@ abstract class AbstractMapper implements MapperInterface
         if (empty($this->modelClassName)) {
             $className = get_class($this);
             if (strpos($className, 'Mapper')) {
-            	$this->setModelClass(str_replace('Mapper', '', $className));
+                $this->setModelClass(str_replace('Mapper', '', $className));
             }
         }
-    	return $this->modelClassName;
+        return $this->modelClassName;
     }
 
     /**
@@ -284,19 +305,18 @@ abstract class AbstractMapper implements MapperInterface
      */
     public function setModelClass($className)
     {
-    	$this->modelClassName = $className;
+        $this->modelClassName = $className;
 
-    	return $this;
+        return $this;
     }
 
     /**
      *
      * @param array $condition
      * @param array $sort
-     *
      * @return ModelInterface
      */
-    public function fetchOne(array $condition = null, array $sort = null)
+    public function fetchOne(array $condition = array(), array $sort = array())
     {
         return $this->fetchAll($condition, $sort, 1)->current();
     }

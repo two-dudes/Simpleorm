@@ -23,11 +23,6 @@ class PdoMapper extends AbstractMapper
     protected $connection;
 
     /**
-     * @var array
-     */
-    protected $config = array();
-
-    /**
      * @var bool
      */
     protected $clearNullValues = false;
@@ -64,10 +59,7 @@ class PdoMapper extends AbstractMapper
         $query = $this->queryBuilder->buildSelectQuery($this->getTableName(), $condition, $sort, $limit, $offset);
         $statement = $this->statementBuilder->prepareAndExecute($query, $condition);
         $result = $statement->fetchAll();
-
-        if (!empty($result)) {
-            return $this->createModelCollection($result);
-        }
+        return $this->createModelCollection($result);
     }
 
     /**

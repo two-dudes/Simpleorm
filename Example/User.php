@@ -1,15 +1,15 @@
 <?php
 namespace Example;
+
 use Models\AbstractModel;
 
 /**
  * @property int    $id
  * @property string $name
  *
- * @method static UserMapper getMapper()
- *
+ * @method static \Models\Mapper\Pdo\PdoMapper getMapper() {"table": "user"}
  */
 class User extends AbstractModel
 {
-    protected static $mapperClass = '\Example\UserMapper';
+
 }

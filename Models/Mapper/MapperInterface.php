@@ -67,4 +67,16 @@ interface MapperInterface
      * @return mixed
      */
     public function create(ModelInterface $model);
+
+    /**
+     * @param array $config
+     * @return mixed
+     */
+    public function setConfig(array $config);
+
+    /**
+     * @param $modelClassName
+     * @return mixed
+     */
+    public function setModelClassName($modelClassName);
 }

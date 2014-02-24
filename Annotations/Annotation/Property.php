@@ -6,7 +6,7 @@
  * Time: 7:26 PM
  */
 
-namespace Annotations;
+namespace Annotations\Annotation;
 
 /**
  * Class Property
@@ -16,7 +16,7 @@ namespace Annotations;
  * Class Property
  * @package Annotations
  */
-class Property
+class Property extends AbstractAnnotation
 {
     /**
      * @var string
@@ -29,11 +29,6 @@ class Property
     protected $type;
 
     /**
-     * @var array
-     */
-    protected $options = array();
-
-    /**
      * @param array $params
      * @param $line
      */
@@ -41,10 +36,6 @@ class Property
     {
         $this->name = str_replace('$', '', $params[2]);
         $this->type = $params[1];
-
-        if (false !== strpos($line, '{')) {
-            $this->options = (array) json_decode(substr($line, strpos($line, '{'), strpos($line, '}')));
-        }
     }
 
     /**

@@ -43,7 +43,7 @@ class Parser
         $annotations = array();
         foreach ($lines as $line) {
             if (false !== strpos($line, '@')) {
-                $annotation = $this->parseAnnotation($line);;
+                $annotation = $this->parseAnnotation($line);
                 if ($annotation) {
                     $annotations[] = $annotation;
                 }
@@ -70,7 +70,9 @@ class Parser
             if (!class_exists($annotationClass)) {
                 throw new AnnotationClassNotFound();
             }
-            return new $annotationClass($parts, $line);
+            $annotation = new $annotationClass($parts, $line);
+            $annotation->parseOptions($line);
+            return $annotation;
         }
     }
 }

@@ -2,8 +2,9 @@
 
 namespace Models\Metadata;
 
+use Annotations\Annotation\MapperMethod;
+use Annotations\Annotation\Property;
 use Annotations\Parser;
-use Annotations\Property;
 
 /**
  * Class MetadataStorage. Stores model properties and options
@@ -45,7 +46,8 @@ class MetadataStorage
     {
         $parser = new Parser();
         $parser->setMap(array(
-            '@property' => '\Annotations\Property'
+            '@property' => '\Annotations\Annotation\Property',
+            '@method' => '\Annotations\Annotation\MapperMethod',
         ));
 
         $this->annotationsParser = $parser;
@@ -62,8 +64,19 @@ class MetadataStorage
 
             foreach ($annotations as $annotation) {
                 if ($annotation instanceof Property) {
-                    $this->metadata[$modelClass][$annotation->getName()] = array(
+                    if (!is_array($this->metadata[$modelClass])) {
+                        $this->metadata[$modelClass] = array(
+                            'fields' => array(),
+                            'mapperClass' => false
+                        );
+                    }
+                    $this->metadata[$modelClass]['fields'][$annotation->getName()] = array(
                         'type' => $annotation->getType(),
+                        'options' => $annotation->getOptions()
+                    );
+                } else if ($annotation instanceof MapperMethod) {
+                    $this->metadata[$modelClass]['mapper'] = array(
+                        'class' => $annotation->getMapperClass(),
                         'options' => $annotation->getOptions()
                     );
                 }
@@ -78,7 +91,7 @@ class MetadataStorage
     public function getModelFieldsMetadata($modelClass)
     {
         $this->loadClassMetadata($modelClass);
-        return $this->metadata[$modelClass];
+        return $this->metadata[$modelClass]['fields'];
     }
 
     /**
@@ -90,7 +103,7 @@ class MetadataStorage
         $this->loadClassMetadata($modelClass);
 
         $fields = array();
-        foreach ($this->metadata[$modelClass] as $name => $config) {
+        foreach ($this->metadata[$modelClass]['fields'] as $name => $config) {
             if (isset($config['options']) && isset($config['options']['default'])) {
                 $fields[$name] = $config['options']['default'];
             } else {
@@ -109,7 +122,21 @@ class MetadataStorage
     public function getFieldType($modelClass, $fieldName)
     {
         $this->loadClassMetadata($modelClass);
-        return $this->metadata[$modelClass][$fieldName]['type'];
+        return $this->metadata[$modelClass]['fields'][$fieldName]['type'];
+    }
+
+    /**
+     * @param $modelClass
+     * @return array|false
+     */
+    public function getMapperConfig($modelClass)
+    {
+        $this->loadClassMetadata($modelClass);
+        if (isset($this->metadata[$modelClass]['mapper'])) {
+            return $this->metadata[$modelClass]['mapper'];
+        } else {
+            return false;
+        }
     }
 
     /**
