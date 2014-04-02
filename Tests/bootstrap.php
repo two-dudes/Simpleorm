@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
 spl_autoload_register(function($file) {
-    $appDir = dirname(realpath(__FILE__)) . '/../../';
+    $appDir = dirname(realpath(__FILE__)) . '/../../Simpleorm/';
     $fileName = str_replace('\\', '/', $file) . '.php';
     $fileName = ltrim($fileName, '/');
     $fileName = $appDir . $fileName;
