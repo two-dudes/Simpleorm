@@ -1,5 +1,5 @@
 {
-    "name": "twodudes/simpleorm",
+    "name": "simpleorm",
     "type": "php-library",
     "description": "Simple php orm.",
     "keywords": ["orm"],
