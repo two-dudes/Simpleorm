@@ -10,7 +10,7 @@
 namespace Tests\Mappers;
 
 use PHPUnit_Framework_TestCase;
-use Simpleorm\Tests\Example\User;
+use Tests\Example\User;
 
 class PdoMapperTest extends PHPUnit_Framework_TestCase
 {

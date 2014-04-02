@@ -1,5 +1,5 @@
 <?php
-namespace Simpleorm\Tests\Example;
+namespace Tests\Example;
 
 use Simpleorm\Models\AbstractModel;
 

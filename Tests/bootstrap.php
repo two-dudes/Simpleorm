@@ -16,6 +16,17 @@ spl_autoload_register(function($file) {
     }
 });
 
+spl_autoload_register(function($file) {
+    $appDir = dirname(realpath(__FILE__)) . '/../../Tests/';
+    $fileName = str_replace('\\', '/', $file) . '.php';
+    $fileName = ltrim($fileName, '/');
+    $fileName = $appDir . $fileName;
+
+    if (file_exists($fileName)) {
+        require_once $fileName;
+    }
+});
+
 PdoMapper::setConnectionConfig(array(
     'user' => 'root',
     'password' => '123123',
