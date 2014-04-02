@@ -1,18 +1,37 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "twodudes/acl-bundle",
+    "type": "symfony-bundle",
+    "description": "Simple php orm.",
+    "keywords": ["orm"],
     "license": "MIT",
-    "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "authors": [
+        {
+            "name": "Vasily Sokolov",
+            "email": "megawilddaddy@gmail.com"
+        }
+    ],
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": {
+            "TwoDudes\\Simpleorm\\": ""
+        }
     },
+    "target-dir": "TwoDudes/Simpleorm",
     "require": {
-        "php": ">=5.3.3",
-        "doctrine/annotations": "dev-hotfix/build-deps",
-        "phpunit/phpunit" : "3.7.*"
+        "php": ">=5.3.3"
     },
-    "config": {
-        "bin-dir": "bin"
-    },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type":"package",
+            "package": {
+                "version":"dev-master",
+                "name":"2Dudes-Simpleorm",
+                "source": {
+                    "url":"https://github.com/two-dudes/Simpleorm",
+                    "type":"git",
+                    "reference":"master"
+                }
+            }
+        }
+    ]
 }
