@@ -25,7 +25,7 @@ class TestModel extends AbstractModel
  * Class PdoMapperTest
  * @package Tests
  */
-class PdoMapperTest extends PHPUnit_Framework_TestCase
+class CollectionTest extends PHPUnit_Framework_TestCase
 {
     /**
      * @var Collection
