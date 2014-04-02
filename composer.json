@@ -1,6 +1,6 @@
 {
-    "name": "twodudes/acl-bundle",
-    "type": "symfony-bundle",
+    "name": "twodudes/simpleorm",
+    "type": "php-library",
     "description": "Simple php orm.",
     "keywords": ["orm"],
     "license": "MIT",
