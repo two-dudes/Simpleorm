@@ -11,9 +11,7 @@
         }
     ],
     "autoload": {
-        "psr-0": {
-            "Simpleorm\\": ""
-        }
+        "psr-4": {"Simpleorm\\": ""}
     },
     "target-dir": "",
     "require": {
