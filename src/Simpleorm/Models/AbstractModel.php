@@ -6,11 +6,12 @@
  * Time: 6:59 PM
  */
 
-namespace Models;
+namespace Simpleorm\Models;
 
-use Models\Mapper\MapperInterface;
-use Models\Mapper\MapperManager;
-use Models\Metadata\MetadataStorage;
+use Simpleorm\Models\Mapper\MapperInterface;
+use Simpleorm\Models\Mapper\MapperManager;
+use Simpleorm\Models\Metadata\MetadataStorage;
+use Simpleorm\Models\ModelInterface;
 
 /**
  * Class AbstractModel

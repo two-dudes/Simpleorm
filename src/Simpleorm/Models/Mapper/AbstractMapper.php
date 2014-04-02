@@ -1,14 +1,14 @@
 <?php
 
-namespace Models\Mapper;
+namespace Simpleorm\Models\Mapper;
 
 /**
  *
  * @author vin
  *
  */
-use Models\Collection;
-use Models\ModelInterface;
+use Simpleorm\Models\Collection;
+use Simpleorm\Models\ModelInterface;
 
 /**
  * Class AbstractMapper
@@ -32,10 +32,10 @@ abstract class AbstractMapper implements MapperInterface
      *
      * @var string
      */
-    protected $modelCollectionClassName = '\Models\Collection';
+    protected $modelCollectionClassName = 'Simpleorm\Models\Collection';
 
     /**
-     * Key to use for fetching instead id
+     * Key to use Simpleorm\for fetching instead id
      *
      * @var mixed $primaryKeyName
      */

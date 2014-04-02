@@ -1,6 +1,6 @@
 <?php
 
-namespace Models\Mapper\Pdo;
+namespace Simpleorm\Models\Mapper\Pdo;
 
 class QueryBuilder
 {

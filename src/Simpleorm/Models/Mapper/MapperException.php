@@ -1,6 +1,6 @@
 <?php
 
-namespace Models\Mapper;
+namespace Simpleorm\Models\Mapper;
 
 /**
  * 

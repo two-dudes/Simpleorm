@@ -1,8 +1,8 @@
 <?php
 
-namespace Models\Mapper\Pdo;
+namespace Simpleorm\Models\Mapper\Pdo;
 
-use Models\Mapper\MapperException;
+use Simpleorm\Models\Mapper\MapperException;
 
 /**
  * Class StatementException

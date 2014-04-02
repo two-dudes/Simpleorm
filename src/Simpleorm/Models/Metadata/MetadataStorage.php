@@ -1,10 +1,10 @@
 <?php
 
-namespace Models\Metadata;
+namespace Simpleorm\Models\Metadata;
 
-use Annotations\Annotation\MapperMethod;
-use Annotations\Annotation\Property;
-use Annotations\Parser;
+use Simpleorm\Annotations\Annotation\MapperMethod;
+use Simpleorm\Annotations\Annotation\Property;
+use Simpleorm\Annotations\Parser;
 
 /**
  * Class MetadataStorage. Stores model properties and options
@@ -46,8 +46,8 @@ class MetadataStorage
     {
         $parser = new Parser();
         $parser->setMap(array(
-            '@property' => '\Annotations\Annotation\Property',
-            '@method' => '\Annotations\Annotation\MapperMethod',
+            '@property' => 'Simpleorm\Annotations\Annotation\Property',
+            '@method' => 'Simpleorm\Annotations\Annotation\MapperMethod',
         ));
 
         $this->annotationsParser = $parser;

@@ -6,9 +6,9 @@
  * Time: 6:58 PM
  */
 
-namespace Annotations;
+namespace Simpleorm\Annotations;
 
-use Annotations\Exception\AnnotationClassNotFound;
+use Simpleorm\Annotations\Exception\AnnotationClassNotFound;
 
 /**
  * Class Parser

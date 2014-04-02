@@ -9,15 +9,14 @@
 
 namespace Tests\Mappers;
 
-use Models\AbstractModel;
-use Models\Mapper\Pdo\PdoMapper;
 use PHPUnit_Framework_TestCase;
+use Simpleorm\Models\AbstractModel;
 
 /**
  * @property int $id
  * @property string $name
  *
- * @method static \Models\Mapper\Pdo\PdoMapper getMapper() {"table" : "user"}
+ * @method static Simpleorm\Models\Mapper\Pdo\PdoMapper getMapper() {"table" : "user"}
  */
 class TestModelAnnotation extends AbstractModel
 {
@@ -29,14 +28,14 @@ class TestModelAnnotation extends AbstractModel
  */
 class TestModelProperty extends AbstractModel
 {
-    protected static $mapperClass = '\Models\Mapper\Pdo\PdoMapper';
+    protected static $mapperClass = 'Simpleorm\Models\Mapper\Pdo\PdoMapper';
 }
 
 class BasicTest extends PHPUnit_Framework_TestCase
 {
     public function testAnnotationMapperOk()
     {
-        $this->assertInstanceOf('\Models\Mapper\Pdo\PdoMapper', TestModelAnnotation::getMapper());
+        $this->assertInstanceOf('Simpleorm\Models\Mapper\Pdo\PdoMapper', TestModelAnnotation::getMapper());
         $this->assertEquals('user', TestModelAnnotation::getMapper()->getConfig()['table']);
     }
 } 

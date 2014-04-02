@@ -1,7 +1,7 @@
 <?php
 
-namespace Models\Mapper;
-use Models\Metadata\MetadataStorage;
+namespace Simpleorm\Models\Mapper;
+use Simpleorm\Models\Metadata\MetadataStorage;
 
 /**
  * 

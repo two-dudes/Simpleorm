@@ -6,7 +6,7 @@
  * Time: 7:26 PM
  */
 
-namespace Annotations\Annotation;
+namespace Simpleorm\Annotations\Annotation;
 
 /**
  * Class Property

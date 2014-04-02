@@ -6,7 +6,7 @@
  * Time: 6:58 PM
  */
 
-namespace Annotations\Annotation;
+namespace Simpleorm\Annotations\Annotation;
 
 /**
  * Class Parser

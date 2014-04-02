@@ -6,7 +6,7 @@
  * Time: 7:29 PM
  */
 
-namespace Annotations\Exception;
+namespace Simpleorm\Annotations\Exception;
 
 class AnnotationClassNotFound extends \Exception
 {

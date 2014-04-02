@@ -9,8 +9,8 @@
 
 namespace Tests;
 
-use Models\AbstractModel;
-use Models\Collection;
+use Simpleorm\Models\AbstractModel;
+use Simpleorm\Models\Collection;
 use PHPUnit_Framework_TestCase;
 
 /**

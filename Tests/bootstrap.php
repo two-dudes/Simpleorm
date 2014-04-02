@@ -1,6 +1,6 @@
 <?php
 
-use Models\Mapper\Pdo\PdoMapper;
+use Simpleorm\Models\Mapper\Pdo\PdoMapper;
 
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');

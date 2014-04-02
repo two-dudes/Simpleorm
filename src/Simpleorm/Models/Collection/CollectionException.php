@@ -1,6 +1,6 @@
 <?php
 
-namespace Models\Collection;
+namespace Simpleorm\Models\Collection;
 
 /**
  * 

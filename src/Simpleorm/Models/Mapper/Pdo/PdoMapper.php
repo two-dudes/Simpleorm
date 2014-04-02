@@ -1,14 +1,14 @@
 <?php
 
-namespace Models\Mapper\Pdo;
+namespace Simpleorm\Models\Mapper\Pdo;
 
-use Models\Collection;
-use Models\Mapper\AbstractMapper;
-use Models\Mapper\CanNotConnectException;
-use Models\Mapper\MapperException;
-use Models\ModelInterface;
 use PDO;
 use PDOException;
+use Simpleorm\Models\Collection;
+use Simpleorm\Models\Mapper\AbstractMapper;
+use Simpleorm\Models\Mapper\CanNotConnectException;
+use Simpleorm\Models\Mapper\MapperException;
+use Simpleorm\Models\ModelInterface;
 
 /**
  *
@@ -137,7 +137,7 @@ class PdoMapper extends AbstractMapper
 
     /**
      * @return mixed
-     * @throws \Models\Mapper\MapperException
+     * @throws Simpleorm\Models\Mapper\MapperException
      */
     protected function getTableName()
     {
@@ -149,7 +149,7 @@ class PdoMapper extends AbstractMapper
 
     /**
      * @return PDO
-     * @throws \Models\Mapper\MapperException
+     * @throws Simpleorm\\Models\Mapper\MapperException
      */
     public function getConnection()
     {

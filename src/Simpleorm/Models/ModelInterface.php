@@ -6,10 +6,9 @@
  * Time: 6:59 PM
  */
 
-namespace Models;
+namespace Simpleorm\Models;
 
-use Annotations\Parser;
-use Annotations\Property;
+use Simpleorm\Annotations\Property;
 
 /**
  * Class AbstractModel

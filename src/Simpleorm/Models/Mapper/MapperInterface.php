@@ -6,9 +6,9 @@
  * Time: 3:11 PM
  */
 
-namespace Models\Mapper;
+namespace Simpleorm\Models\Mapper;
 
-use Models\ModelInterface;
+use Simpleorm\Models\ModelInterface;
 
 /**
  * Interface MapperInterface

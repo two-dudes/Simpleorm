@@ -9,9 +9,8 @@
 
 namespace Tests\Mappers;
 
-use Example\User;
-use Models\Mapper\Pdo\PdoMapper;
 use PHPUnit_Framework_TestCase;
+use Tests\Example\User;
 
 class PdoMapperTest extends PHPUnit_Framework_TestCase
 {
@@ -46,7 +45,7 @@ class PdoMapperTest extends PHPUnit_Framework_TestCase
 
         // fetch all
         $users = User::getMapper()->fetchAll(array('id' => $userId));
-        $this->assertInstanceOf('Models\Collection', $users);
+        $this->assertInstanceOf('Simpleorm\Models\Collection', $users);
         $this->assertEquals(1, $users->count());
 
         // delete

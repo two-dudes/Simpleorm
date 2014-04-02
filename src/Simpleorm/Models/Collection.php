@@ -1,8 +1,8 @@
 <?php
 
-namespace Models;
+namespace Simpleorm\Models;
 
-use Models\Collection\CollectionException;
+use Simpleorm\Models\Collection\CollectionException;
 
 /**
  *
