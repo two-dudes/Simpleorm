@@ -65,6 +65,20 @@ class AbstractModel implements ModelInterface
         }
     }
 
+    function __call($methodName, $arguments)
+    {
+        if (substr($methodName, 0, 3) == 'set') {
+            $propertyName = lcfirst(substr($methodName, 3, strlen($methodName) - 3));
+            if ($this->isPropertyExists($propertyName)) {
+                $this->$propertyName = reset($arguments);
+            }
+        } elseif (substr($methodName, 0, 3) == 'get') {
+            $propertyName = lcfirst(substr($methodName, 3, strlen($methodName) - 3));
+            if ($this->isPropertyExists($propertyName)) {
+                return $this->$propertyName;
+            }
+        }
+    }
 
     /**
      * @param $name
