@@ -73,6 +73,7 @@ abstract class AbstractMapper implements MapperInterface
 
     /**
      * @param array $config
+     * @return mixed|void
      */
     public function setConfig(array $config)
     {
@@ -116,7 +117,7 @@ abstract class AbstractMapper implements MapperInterface
      */
     public function getPrimaryKeyName()
     {
-        return $this->primaryKeyName;
+        return isset($this->config['primary']) ? $this->config['primary'] : $this->primaryKeyName;
     }
 
     /**
@@ -327,7 +328,7 @@ abstract class AbstractMapper implements MapperInterface
      */
     public function fetch($id)
     {
-        return $this->fetchAll(array($this->primaryKeyName => $id), array(), 1)->current();
+        return $this->fetchAll(array($this->getPrimaryKeyName() => $id), array(), 1)->current();
     }
 
 

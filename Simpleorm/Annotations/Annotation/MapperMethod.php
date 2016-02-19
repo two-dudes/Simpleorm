@@ -12,18 +12,6 @@ namespace Simpleorm\Annotations\Annotation;
  * Class Property
  * @package Annotations
  */
-/**
- * Class Property
- * @package Annotations
- */
-/**
- * Class Mapper
- * @package Annotations
- */
-/**
- * Class MapperMethod
- * @package Annotations
- */
 class MapperMethod extends AbstractAnnotation
 {
     /**

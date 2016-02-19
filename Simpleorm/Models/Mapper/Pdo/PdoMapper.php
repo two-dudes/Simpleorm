@@ -76,6 +76,7 @@ class PdoMapper extends AbstractMapper
 
     /**
      * @param ModelInterface $model
+     * @return mixed|void
      */
     protected function doDelete(ModelInterface $model)
     {
@@ -86,6 +87,7 @@ class PdoMapper extends AbstractMapper
 
     /**
      * @param ModelInterface $model
+     * @return mixed|void
      * @throws StatementException
      */
     protected function doUpdate(ModelInterface $model)
@@ -102,6 +104,7 @@ class PdoMapper extends AbstractMapper
 
     /**
      * @param ModelInterface $model
+     * @return mixed|void
      * @throws StatementException
      */
     protected function doCreate(ModelInterface $model)
@@ -110,13 +113,15 @@ class PdoMapper extends AbstractMapper
 
         $data = $this->translateToStorage($model->toArray());
         $data = $this->filterData($data);
-        unset($data[$primaryKeyName]);
+        //unset($data[$primaryKeyName]);
 
         $query = $this->queryBuilder->buildInsertQuery($this->getTableName(), $data);
         $this->statementBuilder->prepareAndExecute($query, $data);
 
-        $id = $this->getConnection()->lastInsertId();
-        $model->$primaryKeyName = $id;
+        $id = (int) $this->getConnection()->lastInsertId();
+        if ($id > 0) {
+            $model->$primaryKeyName = $id;
+        }
     }
 
     /**
@@ -137,7 +142,7 @@ class PdoMapper extends AbstractMapper
 
     /**
      * @return mixed
-     * @throws Simpleorm\Models\Mapper\MapperException
+     * @throws MapperException
      */
     protected function getTableName()
     {
@@ -149,7 +154,7 @@ class PdoMapper extends AbstractMapper
 
     /**
      * @return PDO
-     * @throws Simpleorm\\Models\Mapper\MapperException
+     * @throws CanNotConnectException
      */
     public function getConnection()
     {
@@ -158,6 +163,9 @@ class PdoMapper extends AbstractMapper
             $connectionString = "mysql:host={$connectionParams['host']};port={$connectionParams['port']};dbname={$connectionParams['db']}";
             try {
                 $this->connection = new PDO($connectionString, $connectionParams['user'], $connectionParams['password']);
+                if (isset($connectionParams['encoding'])) {
+                    $this->connection->query("SET NAMES " . $connectionParams['encoding']);
+                }
             } catch (PDOException $ex) {
                 throw new CanNotConnectException();
             }

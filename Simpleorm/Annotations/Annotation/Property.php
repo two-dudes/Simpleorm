@@ -12,10 +12,6 @@ namespace Simpleorm\Annotations\Annotation;
  * Class Property
  * @package Annotations
  */
-/**
- * Class Property
- * @package Annotations
- */
 class Property extends AbstractAnnotation
 {
     /**
