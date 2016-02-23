@@ -132,7 +132,7 @@ class QueryBuilder
             $string .= " ORDER BY ";
             $sortParts = array();
             foreach ($sort as $key => $value) {
-                $sortParts[] = "$key " . ($value ? 'ASC' : 'DESC');
+                $sortParts[] = "$key " . ($value == 'ASC' ? 'ASC' : 'DESC');
             }
             $string .= implode(', ', $sortParts);
         }
