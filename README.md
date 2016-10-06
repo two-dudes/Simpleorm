@@ -2,6 +2,12 @@ Simpleorm
 =========
 Super simple ORM on top of PDO. Based on the data mapper pattern.
 
+### Installation
+
+```php
+composer require twodudes/simpleorm
+```
+
 ### Quickstart
 
 ##### The model
