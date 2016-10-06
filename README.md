@@ -4,6 +4,8 @@ Super simple ORM on top of PDO. Based on the data mapper pattern.
 
 ### Installation
 
+Installation with composer:
+
 ```php
 composer require twodudes/simpleorm
 ```
