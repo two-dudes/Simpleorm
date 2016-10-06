@@ -2,7 +2,7 @@
     "name": "twodudes/simpleorm",
     "type": "php-library",
     "description": "Simple php orm.",
-    "keywords": ["orm", "php", "pdo", "query builder"],
+    "keywords": ["orm", "php", "pdo", "query builder", "pdo orm", "mysql orm"],
     "license": "MIT",
     "authors": [
         {
