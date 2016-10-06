@@ -7,6 +7,7 @@
  */
 
 namespace Simpleorm\Annotations\Annotation;
+use Simpleorm\Annotations\ExtendedReflectionClass;
 
 /**
  * Class Property
@@ -31,8 +32,22 @@ class MapperMethod extends AbstractAnnotation
     /**
      * @return mixed
      */
-    public function getMapperClass()
+    public function getMapperClass($modelClass)
     {
+        if (!class_exists($this->mapperClass)) {
+            $reflectionClass = new ExtendedReflectionClass($modelClass);
+            $statements = $reflectionClass->getUseStatements();
+
+            foreach ($statements as $statement) {
+                $class = $statement['class'];
+                $parts = explode('\\', $class);
+                if (end($parts) == $this->mapperClass) {
+                    $this->mapperClass = $class;
+                    break;
+                }
+            }
+        }
+
         return $this->mapperClass;
     }
 }
