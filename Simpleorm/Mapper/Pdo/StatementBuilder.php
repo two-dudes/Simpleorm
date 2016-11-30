@@ -1,6 +1,6 @@
 <?php
 
-namespace Simpleorm\Model\Mapper\Pdo;
+namespace Simpleorm\Mapper\Pdo;
 
 use PDO;
 
