@@ -8,9 +8,6 @@ use Simpleorm\Collection\Collection;
 use Simpleorm\Mapper\AbstractMapper;
 use Simpleorm\Mapper\Exception\CanNotConnectException;
 use Simpleorm\Mapper\Exception\MapperException;
-use Simpleorm\Model\Mapper\Pdo\QueryBuilder;
-use Simpleorm\Model\Mapper\Pdo\StatementBuilder;
-use Simpleorm\Model\Mapper\Pdo\StatementException;
 use Simpleorm\Model\ModelInterface;
 
 /**
