@@ -42,7 +42,7 @@ interface MapperInterface
      * @param array $sort
      * @return mixed
      */
-    public function fetchOne(array $condition = null, array $sort = null);
+    public function fetchOne(array $condition = array(), array $sort = array());
 
     /**
      * @param ModelInterface $model
